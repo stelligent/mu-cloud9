@@ -7,7 +7,7 @@ Resources:
           Version: '2012-10-17'
           Statement:
           - Action:
-            - guardduty:*
+            - cloud9:*
             - iam:PutRolePolicy
             Resource: '*'
             Effect: Allow
