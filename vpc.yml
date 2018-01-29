@@ -1,0 +1,8 @@
+  Cloud9Environment:
+    Type: "AWS::Cloud9::EnvironmentEC2"
+    Properties:
+      Repositories: 
+        - Repository
+      AutomaticStopTimeMinutes: 30
+      InstanceType: t2.micro
+      SubnetId: String
