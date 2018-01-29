@@ -1,8 +1,15 @@
+  IdleTimeout:
+    Default: 30
+    Description: How many minutes idle before shutting down the IDE
+    Type: Number
+
   Cloud9Environment:
     Type: "AWS::Cloud9::EnvironmentEC2"
     Properties:
-      Repositories: 
-        - Repository
-      AutomaticStopTimeMinutes: 30
+        - RepositoryUrl: https://github.com/stelligent/mu-cloud9.git
+          PathComponent: github.com/stelligent/mu-cloud9
+      Description: A Cloud9 IDE
+      AutomaticStopTimeMinutes: !Ref IdleTimeout
+        Ref: IdleTimeout
       InstanceType: t2.micro
-      SubnetId: String
+      SubnetId: AWS::EC2::Subnet::Id
