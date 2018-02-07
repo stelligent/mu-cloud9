@@ -19,5 +19,4 @@ Resources:
         Ref: AutoHibernateTimeout
       InstanceType:
         Ref: EC2InstanceType
-      Name:
-        Ref: AWS::StackName
+      Name: MyCloud9IDE
