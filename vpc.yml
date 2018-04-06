@@ -19,4 +19,13 @@ Resources:
         Ref: AutoHibernateTimeout
       InstanceType:
         Ref: EC2InstanceType
-      Name: MyCloud9IDE
+      Name:
+        Ref: AWS::StackName
+Outputs:
+  Cloud9Url:
+    Value:
+      Fn::Join:
+      - ''
+      - - https://console.aws.amazon.com/cloud9/home/environments/
+        - Ref: IDE
+    Description: Cloud9 environment
