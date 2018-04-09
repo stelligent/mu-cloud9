@@ -27,7 +27,7 @@ Resources:
       Name:
         Ref: AWS::StackName
 Outputs:
-  Cloud9Url:
+  Cloud9URL:
     Value:
       Fn::Join:
       - ''
