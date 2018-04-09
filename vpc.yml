@@ -7,6 +7,9 @@ Parameters:
     Default: 30
     Description: How many minutes idle before shutting down the IDE
     Type: Number
+  SubnetIdentifier:
+    Description: SubnetId
+    Type: AWS::EC2::Subnet::Id
 Resources:
   IDE:
     Type: AWS::Cloud9::EnvironmentEC2
@@ -17,6 +20,8 @@ Resources:
       Description: Cloud9 IDE
       AutomaticStopTimeMinutes:
         Ref: AutoHibernateTimeout
+      SubnetId:
+        Ref: SubnetIdentifier
       InstanceType:
         Ref: EC2InstanceType
       Name:
